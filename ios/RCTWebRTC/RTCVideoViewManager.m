@@ -66,6 +66,9 @@ typedef NS_ENUM(NSInteger, RTCVideoViewObjectFit) {
  */
 @property (nonatomic, strong) RTCVideoTrack *videoTrack;
 
+
+@property (nonatomic, strong) NSNumber* tag;
+
 @end
 
 @implementation RTCVideoView {
@@ -356,6 +359,15 @@ RCT_CUSTOM_VIEW_PROPERTY(streamURL, NSNumber, RTCVideoView) {
   }
 
   view.videoTrack = videoTrack;
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(tag, NSNumber, RTCVideoView) {
+	if (json) {
+		NSNumber *n = [RCTConvert NSNumber:json]
+		view.tag = n.intValue
+	} else {
+		view.tag = 0
+	}
 }
 
 @end
