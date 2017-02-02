@@ -363,10 +363,10 @@ RCT_CUSTOM_VIEW_PROPERTY(streamURL, NSNumber, RTCVideoView) {
 
 RCT_CUSTOM_VIEW_PROPERTY(tag, NSNumber, RTCVideoView) {
 	if (json) {
-		NSNumber *n = [RCTConvert NSNumber:json]
-		view.tag = n.intValue
+		NSNumber *n = [RCTConvert NSNumber:json];
+		view.tag = n.intValue;
 	} else {
-		view.tag = 0
+		view.tag = 0;
 	}
 }
 
